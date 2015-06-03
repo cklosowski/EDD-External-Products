@@ -94,6 +94,8 @@ function edd_external_product_link( $purchase_form, $args ) {
 	// If the product has an external URL set
 	if ( $external_url = get_post_meta( $args['download_id'], '_edd_external_url', true ) ) {
 
+		$args = apply_filters( 'edd_external_product_link_args', $args );
+
 		// Open up the standard containers
 		$output = '<div class="edd_download_purchase_form">';
 		$output .= '<div class="edd_purchase_submit_wrapper">';
